@@ -4,7 +4,7 @@ class NameDisplay
     public static $number;
     public function __construct($number)
     {
-        self::$number = $number;
+        $this->number = $number;
     }
 
     public static function DisplayName($number)
