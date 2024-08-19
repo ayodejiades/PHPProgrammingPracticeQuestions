@@ -78,7 +78,7 @@ The following are numerous examples of how to use the programs listed above:
 
 ### Program 1
 
-```[php]
+```php
 <?php
 
 class Triangle
@@ -167,7 +167,7 @@ echo $someTriangle::area() . "<br>";
 
 ## Program 2
 
-```[php]
+```php
 <?php
 
 class Sphere
@@ -300,7 +300,7 @@ $someCube->result() . "<br>";
 
 ## Program 3
 
-```[php]
+```php
 <?php 
 class Strings {
     public $string;
@@ -333,7 +333,7 @@ foreach ($strings as $string) {
 
 ## Program 4
 
-```[php]
+```php
 
 <?php
 require_once("./Number.php");
@@ -348,7 +348,7 @@ foreach ($numbers as $number) {
 
 ## Program 5
 
-```[php]
+```php
 
 <?php
 require_once("./Number.php");
@@ -363,7 +363,7 @@ foreach ($numbers as $number) {
 
 ## Program 6
 
-```[php]
+```php
 <?php
 class Year
 {
