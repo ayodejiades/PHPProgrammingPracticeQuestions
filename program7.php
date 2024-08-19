@@ -1,19 +1,8 @@
 <?php
-class NameDisplay
-{
-    public static $number;
-    public function __construct($number)
-    {
-        $this->number = $number;
-    }
+require_once("./Number.php");
 
-    public static function DisplayName($number)
-    {
-        if ($number % 3 == 0) {
-            return "Your Name";
-        }
-        return "Backend";
-    }
+$numbers = [new Number(0), new Number(1), new Number(2), new Number(3)];
+
+foreach ($numbers as $number) {
+    echo $number->DisplayName() . "\n";
 }
-
-echo NameDisplay::DisplayName(67);

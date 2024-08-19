@@ -1,21 +1,8 @@
 <?php
+require_once("./Number.php");
 
-class IsEvenOrOdd
-{
-    public static $number;
+$numbers = [new Number(0), new Number(1), new Number(2), new Number(3)];
 
-    public function __construct($number)
-    {
-        $this->number = $number;
-    }
-
-    public static function isEvenOrOdd($number)
-    {
-        if ($number % 2 == 0) {
-            return "The number " . $number . " is even";
-        }
-        return "The number " . $number . " is odd";
-    }
+foreach ($numbers as $number) {
+    echo $number->isEvenOrOdd() . "\n";
 }
-
-echo IsEvenOrOdd::isEvenOrOdd(4);

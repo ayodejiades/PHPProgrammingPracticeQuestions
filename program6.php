@@ -8,13 +8,18 @@ class Year
         $this->year = $year;
     }
 
-    public static function IsLeapYear($year)
+    public function isLeapYear()
     {
-        if ($year % 4 === 0 || $year % 100 === 0 || $year % 400 === 0) {
-            return "$year is a leap year";
+        if ($this->year % 4 === 0 || $this->year % 100 === 0 || $this->year % 400 === 0) {
+            return $this->year . " is a leap year";
         }
-        return "$year is not a leap year";
+        return $this->year . " is not a leap year";
     }
 }
 
-echo Year::IsLeapYear(2000);
+
+$years = [new Year(2000), new Year(2001), new Year(2002), new Year(2003), new Year(2004)];
+
+foreach ($years as $year) {
+    echo $year->isLeapYear() . "\n";
+}

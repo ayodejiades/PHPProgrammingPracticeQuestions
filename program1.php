@@ -69,3 +69,15 @@ class Square
         return "The area of a square with side " . self::$length . " is " . $area;
     }
 }
+
+$someSquare = new Square(3);
+echo $someSquare::area() . "<br>";
+
+$someRectangle = new Rectangle(3, 4);
+echo $someRectangle::area() . "<br>";
+
+$someCircle = new Circle(4);
+echo $someCircle::area() . "<br>";
+
+$someTriangle = new triangle(3, 4, 5);
+echo $someTriangle::area() . "<br>";

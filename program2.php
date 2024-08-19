@@ -113,3 +113,15 @@ class Cone
     }
 
 }
+
+$someCylinder = new Cylinder(3, 4);
+$someCylinder->result() . "<br>";
+
+$someCone = new Cone(3, 4);
+$someCone->result() . "<br>";
+
+$someSphere = new Sphere(4);
+$someSphere->result() . "<br>";
+
+$someCube = new Cube(4);
+$someCube->result() . "<br>";
