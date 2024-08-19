@@ -37,7 +37,7 @@ class Number
         return "$this->number is prime" . "<br>";
     }
 
-    public function DisplayName()
+    public function displayName()
     {
         if ($this->number % 3 == 0) {
             return "Your Name";
