@@ -1,59 +1,62 @@
 # PHP Programming Practice Questions
+
 This repository contains my solutions to the following problems:
 
-### Question 1
+## Question 1
 
-Write a program to calculate the area of the following shapes: 
--  Triangle
--  Rectangles
--  Circle
--  Square
-   
+Write a program to calculate the area of the following shapes:
+
+- Triangle
+- Rectangles
+- Circle
+- Square
+
 Create variables for the necessary dimensions.  Assign values to the dimensions.  
 
 Print out the result in this template  “The area of a circle with radius 4 is 29”.
 
 My Solution: [Program 1](./program1.php)
 
-### Question 2
-Write a program to calculate the area and volume of the following shapes: 
+## Question 2
+
+Write a program to calculate the area and volume of the following shapes:
 
 - Sphere
 - Cylinder
 - Cube
 - Cone
-   
+
 Create variables for the necessary dimensions.  Assign values to the dimensions.
 
 Print out the result in this template “The area of a sphere with radius 4 is 29 and the volume of a sphere with radius 4 is 47”.
 
 My Solution: [Program 2](./program2.php)
 
-### Question 3
+## Question 3
 
 Write a program to determine if a given string is a palindrome.
 
 My Solution: [Program 3](./program3.php)
 
-### Question 4
+## Question 4
 
 Write a program to determine if a number is even or odd.
 
 My Solution: [Program 4](./program4.php)
 
-### Question 5
+## Question 5
 
 Write a program to determine if a number is a prime number or not.
 
 My Solution: [Program 5](./program5.php)
 
-### Question 6
+## Question 6
 
 Write a program to determine if a year is a leap year or not.
 
 My Solution: [Program 6](./program6.php)
 
-### Question 7
+## Question 7
 
 Write a program that receives a number from a user and displays “Your Name” if it is a multiple of 3, and “Backend” if it is not a multiple of 3
 
@@ -70,10 +73,12 @@ Clone this repository: `git clone https://github.com/ayodejiades/PHPProgrammingP
 Then, run on your local device.
 
 ## Examples
+
 The following are numerous examples of how to use the programs listed above:
 
 ### Program 1
-```
+
+```[php]
 <?php
 
 class Triangle
@@ -161,7 +166,8 @@ echo $someTriangle::area() . "<br>";
 ```
 
 ## Program 2
-```
+
+```[php]
 <?php
 
 class Sphere
@@ -294,7 +300,7 @@ $someCube->result() . "<br>";
 
 ## Program 3
 
-```
+```[php]
 <?php 
 class Strings {
     public $string;
@@ -327,7 +333,7 @@ foreach ($strings as $string) {
 
 ## Program 4
 
-```
+```[php]
 
 <?php
 require_once("./Number.php");
@@ -342,7 +348,7 @@ foreach ($numbers as $number) {
 
 ## Program 5
 
-```
+```[php]
 
 <?php
 require_once("./Number.php");
@@ -357,7 +363,7 @@ foreach ($numbers as $number) {
 
 ## Program 6
 
-```
+```[php]
 <?php
 class Year
 {
@@ -388,7 +394,7 @@ foreach ($years as $year) {
 
 ## Program 7
 
-```
+```[php]
 <?php
 require_once("./Number.php");
 
