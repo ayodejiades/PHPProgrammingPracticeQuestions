@@ -394,7 +394,7 @@ foreach ($years as $year) {
 
 ## Program 7
 
-```[php]
+```php
 <?php
 require_once("./Number.php");
 
