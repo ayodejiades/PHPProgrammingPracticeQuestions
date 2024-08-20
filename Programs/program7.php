@@ -1,9 +1,9 @@
 <?php
 require_once("./Interfaces/Number.php");
 
-$numbers = new Number();
-$inputNumbers = $numbers->accepts([1, 2, 3, 4, 5]);
+$numbers = new Number([1, 2, 3, 4, 5]);
 
-foreach ($inputNumbers as $number) {
-    echo $number->displayName() . "\n";
+
+foreach ($numbers->displayName() as $result) {
+    echo $result . "\n";
 }

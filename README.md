@@ -80,7 +80,6 @@ The following are numerous examples of how to use the programs listed above:
 
 ```php
 <?php
-
 $someCircle = new Circle();
 echo $someCircle->accepts(6)->displayArea() . "<br>";
 
@@ -99,7 +98,6 @@ echo $someRectangle->accepts(2, 3)->displayArea() . "<br>";
 
 ```php
 <?php
-
 $someCone = new Cone();
 echo $someCone->accepts(2, 3)->displayAreaAndVolume() . "<br>";
 
@@ -117,72 +115,47 @@ echo $someSphere->accepts(2)->displayAreaAndVolume() . "<br>";
 
 ```php
 <?php 
-
-$strings = new Strings(["racecar", "madam", "mamacita", ")(()"]);
-
-foreach ($strings as $string) {
-    echo $string->isPalindrome() . "\n";
+$strings = new Strings(["mamacita", ")(()", "racecar", "madam", "ayodeji"]);
+ 
+foreach($strings->checkPalindrome() as $result){
+    echo $result. "\n";
 }
+
 
 ```
 
 ## Program 4
 
 ```php
-
 <?php
-require_once("./Number.php");
+$numbers = new Number([1, 2, 3, 4, 5]);
 
-$numbers = [new Number(0), new Number(1), new Number(2), new Number(3)];
 
-foreach ($numbers as $number) {
-    echo $number->isEvenOrOdd() . "\n";
+foreach ($numbers->checkEvenOrOdd() as $result) {
+    echo $result . "\n";
 }
-
 ```
 
 ## Program 5
 
 ```php
-
 <?php
-require_once("./Number.php");
+$numbers = new Number([1, 2, 3, 4, 5]);
 
-$numbers = [new Number(0), new Number(1), new Number(2), new Number(3)];
 
-foreach ($numbers as $number) {
-    echo $number->checkPrime() . "\n";
+foreach ($numbers->checkPrime() as $result) {
+    echo $result . "\n";
 }
-
 ```
 
 ## Program 6
 
 ```php
 <?php
-class Year
-{
-    public $year;
+$years = new Year([2000, 2001, 2002, 2003, 2004]);
 
-    public function __construct($year)
-    {
-        $this->year = $year;
-    }
-
-    public function isLeapYear()
-    {
-        if ($this->year % 4 === 0 || $this->year % 100 === 0 || $this->year % 400 === 0) {
-            return $this->year . " is a leap year";
-        }
-        return $this->year . " is not a leap year";
-    }
-}
-
-
-$years = [new Year(2000), new Year(2001), new Year(2002), new Year(2003), new Year(2004)];
-
-foreach ($years as $year) {
-    echo $year->isLeapYear() . "\n";
+foreach ($years->checkLeapYears() as $result) {
+    echo $result . "\n";
 }
 
 ```
@@ -191,12 +164,10 @@ foreach ($years as $year) {
 
 ```php
 <?php
-require_once("./Number.php");
+$numbers = new Number([1, 2, 3, 4, 5]);
 
-$numbers = [new Number(0), new Number(1), new Number(2), new Number(3)];
-
-foreach ($numbers as $number) {
-    echo $number->displayName() . "\n";
+foreach ($numbers->checkEvenOrOdd() as $result) {
+    echo $result . "\n";
 }
 ```
 

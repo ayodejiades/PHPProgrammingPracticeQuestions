@@ -2,48 +2,65 @@
 
 class Number
 {
-    public $number;
+    public array $numbers;
 
-    public function accepts($number)
+    public function __construct($numbers)
     {
-        $this->number = $number;
-        return $this;
+        $this->numbers = $numbers;
     }
 
-    public function isEvenOrOdd()
+    public function isEvenOrOdd(int $number): bool
     {
-        if ($this->number % 2 == 0) {
-            return "The number " . $this->number . " is even" . "<br>";
+        return $number % 2 == 0;
+    }
+
+    public function checkEvenOrOdd(): array
+    {
+        $results = [];
+        foreach ($this->numbers as $number) {
+            $results[] = $number . ($this->isEvenOrOdd($number) ? " is an even number" : " is an odd number");
         }
-        return "The number " . $this->number . " is odd" . "<br>";
+        return $results;
     }
 
-    public function checkPrime()
+
+    public function isPrime(int $number): bool
     {
         $res = true;
-        if ($this->number <= 1) {
-            return "$this->number is not prime" . "<br>";
+        if ($number <= 1) {
+            $res = false;
         }
-        for ($i = 2; $i * $i <= $this->number; $i++) {
-            if ($this->number % $i === 0) {
+        for ($i = 2; $i * $i <= $number; $i++) {
+            if ($number % $i === 0) {
                 $res = false;
                 break;
             } else {
                 $res = true;
             }
         }
-        if (!$res) {
-            return "$this->number is not prime" . "<br>";
-        }
-        return "$this->number is prime" . "<br>";
+        return $res;
     }
 
+    public function checkPrime(): array
+    {
+        $results = [];
+        foreach ($this->numbers as $number) {
+            $results[] = $number . ($this->isPrime($number) ? " is prime" : " is not prime");
+        }
+        return $results;
+    }
+
+
+    public function isAMultipleOf(int $number): bool
+    {
+        return $number % 3 === 0;
+    }
     public function displayName()
     {
-        if ($this->number % 3 == 0) {
-            return "Your Name";
+        $results = [];
+        foreach ($this->numbers as $number) {
+            $results[] = $this->isAMultipleOf($number) ? "Your Name" : "Backend";
         }
-        return "Backend";
+        return $results;
     }
-
 }

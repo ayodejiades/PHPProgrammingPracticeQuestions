@@ -1,21 +1,30 @@
-<?php 
-class Strings {
-    public $string;
+<?php
+class Strings
+{
+    public array $strings;
 
-    public function __construct($strings = []) {
-        foreach ($strings as $string) {
-             $this->string = $string;
-        }
+    public function __construct(array $strings)
+    {
+        $this->strings = $strings;
     }
 
-    public function isPalindrome() {
-        $reversedString = strrev($this->string);
-        if ($this->string === $reversedString) {
-            return "{$this->string} is a palindrome";
+    public function isPalindrome(string $string): bool
+    {
+        $reversedString = strrev($string);
+        return ($string === $reversedString);
+    }
+    public function checkPalindrome(): array
+    {
+        $results = [];
+        foreach ($this->strings as $string) {
+            $results[] = $string . ($this->isPalindrome($string) ? " is a palindrome" : " is not a leap year");
         }
-        return "{$this->string} is not a palindrome";
+        return $results;
     }
 }
 
 $strings = new Strings(["mamacita", ")(()"]);
-echo $strings->isPalindrome();
+ 
+foreach($strings->checkPalindrome() as $result){
+    echo $result. "\n";
+}
