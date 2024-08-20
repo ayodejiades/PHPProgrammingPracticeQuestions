@@ -4,9 +4,10 @@ class Number
 {
     public $number;
 
-    public function __construct($number)
+    public function accepts($number)
     {
         $this->number = $number;
+        return $this;
     }
 
     public function isEvenOrOdd()

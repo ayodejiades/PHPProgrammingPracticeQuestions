@@ -2,8 +2,10 @@
 class Strings {
     public $string;
 
-    public function __construct($string) {
-        $this->string = $string;
+    public function __construct($strings = []) {
+        foreach ($strings as $string) {
+             $this->string = $string;
+        }
     }
 
     public function isPalindrome() {
@@ -15,13 +17,5 @@ class Strings {
     }
 }
 
-$strings = [
-    new Strings("racecar"),
-    new Strings("madam"),
-    new Strings("mamacita"),
-    new Strings(")(()")
-];
-
-foreach ($strings as $string) {
-    echo $string->isPalindrome() . "\n";
-}
+$strings = new Strings(["mamacita", ")(()"]);
+echo $strings->isPalindrome();
