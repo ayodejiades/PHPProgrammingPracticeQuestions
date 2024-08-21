@@ -1,5 +1,5 @@
 <?php
-require_once "./Interfaces/Shape.php";
+require_once "./Packages/Interfaces/Shape.php";
 class Square implements Shape
 {
     public int $length;

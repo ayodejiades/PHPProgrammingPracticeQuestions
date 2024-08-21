@@ -1,5 +1,5 @@
 <?php
-require_once("./Interfaces/Number.php");
+require_once "./Packages/Classes/Number.php";
 
 $numbers = new Number();
 $number1 = new Number();

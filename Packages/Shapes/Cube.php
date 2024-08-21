@@ -1,5 +1,5 @@
 <?php
-require_once "./Shapes/Square.php";
+require_once "./Packages/Shapes/Square.php";
 class Cube extends Square
 {
     public function calculateArea()
