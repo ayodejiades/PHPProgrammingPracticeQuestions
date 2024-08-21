@@ -28,9 +28,6 @@ class Sentence
     }
 }
 
-$sentence1 = new Sentence();
-echo $sentence1->accepts("mamacita")->checkPalindrome();
-
-
-$sentence2 = new Sentence();
-print_r($sentence2->accepts(["mamacita", "madam", ")(()"])->checkPalindrome());
+$sentence = new Sentence();
+echo $sentence->accepts("mamacita")->checkPalindrome();
+print_r($sentence->accepts(["mamacita", "madam", ")(()"])->checkPalindrome());

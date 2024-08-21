@@ -80,30 +80,27 @@ The following are numerous examples of how to use the programs listed above:
 
 ```php
 <?php
-$shape1 = new ShapeHandler();
-$shape1->Square()->accepts(6)->displayAreaAndVolume()."\n";
-
-$shape2 = new ShapeHandler();
-$shape2->Triangle()->accepts(1,2,3)->displayArea();
+$shapeHandler = new ShapeHandler();
+$shapeHandler->Square()->accepts(6)->displayAreaAndVolume();
+$shapeHandler->Triangle()->accepts(1,2,3)->displayArea();
 ```
 
 ## Program 2
 
 ```php
 <?php
-$shape1 = new ShapeHandler();
-$shape1->Cone()->accepts(3, 4)->displayAreaAndVolume() . "\n";
-
-$shape2 = new ShapeHandler();
-$shape2->Sphere()->accepts(6)->displayAreaAndVolume() . "\n";
+$shapeHandler = new ShapeHandler();
+$shapeHandler->Cone()->accepts(3, 4)->displayAreaAndVolume();
+$shapeHandler->Sphere()->accepts(6)->displayAreaAndVolume();
 ```
 
 ## Program 3
 
 ```php
 <?php 
-$sentence1 = new Sentence();
-echo $sentence1->accepts("mamacita")->checkPalindrome();
+$sentence = new Sentence();
+echo $sentence->accepts("mamacita")->checkPalindrome();
+print_r($sentence->accepts(["mamacita", "madam", ")(()"])->checkPalindrome());
 ```
 
 ## Program 4
@@ -111,24 +108,21 @@ echo $sentence1->accepts("mamacita")->checkPalindrome();
 ```php
 <?php
 $numbers = new Number();
-$number1 = new Number();
 $results = $numbers->accepts([1, 2, 3, 4, 5])->checkEvenOrOdd();
-$result1 = $number1->accepts(1)->checkEvenOrOdd();
+$result = $numbers->accepts(1)->checkEvenOrOdd();
 print_r($results);
-print_r($result1);
+print_r($result);
 ```
 
 ## Program 5
 
 ```php
 <?php
-
 $numbers = new Number();
-$number1 = new Number();
 $results = $numbers->accepts([1, 2, 3, 4, 5])->checkPrime();
-$result1 = $number1->accepts(1)->checkPrime();
+$result = $numbers->accepts(1)->checkPrime();
 print_r($results);
-print_r($result1);
+print_r($result);
 ```
 
 ## Program 6
@@ -136,11 +130,10 @@ print_r($result1);
 ```php
 <?php
 $years = new Year();
-$year1 = new Year();
 $results = $years->accepts([2021, 2022, 2023, 2024, 2025])->checkLeapYear();
-$result1 = $year1->accepts(2021)->checkLeapYear();
+$result = $years->accepts(2021)->checkLeapYear();
 print_r($results);
-print_r($result1);
+print_r($result);
 ```
 
 ## Program 7
