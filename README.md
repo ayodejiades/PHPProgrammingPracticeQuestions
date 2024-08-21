@@ -141,9 +141,8 @@ print_r($result);
 ```php
 <?php
 $numbers = new Number();
-$number1 = new Number();
 $results = $numbers->accepts([1, 2, 3, 4, 5])->displayName();
-$result1 = $number1->accepts(1)->displayName();
+$result = $numbers->accepts(1)->displayName();
 print_r($results);
 print_r($result1);
 ```
