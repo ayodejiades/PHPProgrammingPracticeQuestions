@@ -12,18 +12,20 @@ class Circle implements Shape
 
     public function calculateArea()
     {
-        [$radius, $pi] = [$this->radius, pi()];
-        $area = $pi * ($radius ** 2);
+        $area = pi() * pow($this->radius, 2);
         return intval($area);
     }
 
     public function calculateVolume()
     {
+        return "invalid";
     }
     public function displayArea()
     {
-        [$radius, $res] = [$this->radius, $this->calculateArea()];
-        echo "The area of a circle with radius " . $radius . " is " . $res;
+        echo "The area of a circle with radius " . $this->radius . " is " . $this->calculateArea();
     }
-    public function displayAreaAndVolume(){}
+    public function displayAreaAndVolume()
+    {
+        echo "The area of a circle with radius " . $this->radius . " is " . $this->calculateArea() . " and the volume is" . $this->calculateVolume();
+    }
 }

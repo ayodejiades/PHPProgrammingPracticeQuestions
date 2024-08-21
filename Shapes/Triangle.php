@@ -23,13 +23,16 @@ class Triangle implements Shape
     }
     public function calculateVolume()
     {
+        return "invalid";
     }
 
     public function displayArea()
     {
-        [$a, $b, $c, $res] = [$this->a, $this->b, $this->c, $this->calculateArea()];
-        echo "The area of a triangle with sides " . $a . ", " . $b . ", and " . $c . " is " . $res;
+        echo "The area of a triangle with sides " . $this->a . ", " . $this->b . ", and " . $this->c . " is " . $this->calculateArea();
     }
 
-    public function displayAreaAndVolume(){}
+    public function displayAreaAndVolume()
+    {
+        echo "The area of a triangle with sides " . $this->a . ", " . $this->b . ", and " . $this->c . " is " . $this->calculateArea() . " and the volume is " . $this->calculateVolume();
+    }
 }

@@ -14,22 +14,22 @@ class Cylinder implements Shape
 
     public function calculateArea()
     {
-        [$radius, $pi, $height] = [$this->radius, pi(), $this->height];
-        $area = 2 * $pi * $radius * ($radius + $height);
+        $area = 2 * pi() * $this->radius * ($this->radius + $this->height);
         return intval($area);
     }
 
     public function calculateVolume()
     {
-        [$radius, $pi, $height] = [$this->radius, pi(), $this->height];
-        $volume = $pi * ($radius ** 2) * $height;
+        $volume = pi() * pow($this->radius, 2) * $this->height;
         return intval($volume);
     }
 
-    public function displayArea(){}
+    public function displayArea()
+    {
+        return "The area of a cylinder with radius " . $this->radius . " and a height " . $this->height . " is " . $this->calculateArea();
+    }
     public function displayAreaAndVolume()
     {
-        [$radius, $height, $res1, $res2] = [$this->radius, $this->height, $this->calculateArea(), $this->calculateVolume()];
-        return "The area of a cylinder with radius " . $this->radius . " and a height " . $this->height . " is " . $res1 . " and the volume is " . $res2;
+        return "The area of a cylinder with radius " . $this->radius . " and a height " . $this->height . " is " . $this->calculateArea() . " and the volume is " . $this->calculateVolume();
     }
 }

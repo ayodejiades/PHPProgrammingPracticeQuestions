@@ -4,22 +4,24 @@ class Cone extends Cylinder
 {
     public function calculateArea()
     {
-        [$radius, $pi, $height] = [$this->radius, pi(), $this->height];
-        $slantHeight = sqrt(($radius ** 2) + ($height ** 2));
-        $area = $pi * $radius * ($radius + $slantHeight);
+        $slantHeight = sqrt(pow($this->radius, 2) + pow($this->height, 2));
+        $area = pi() * $this->radius * ($this->radius + $slantHeight);
         return intval($area);
     }
 
     public function calculateVolume()
     {
-        [$radius, $pi, $height] = [$this->radius, pi(), $this->height];
-        $volume = 1 / 3 * $pi * ($radius ** 2) * $height;
+        $volume = (1 / 3) * pi() * pow($this->radius, 2) * $this->height;
         return intval($volume);
+    }
+
+    public function displayArea()
+    {
+        echo "The area of a cone with radius " . $this->radius . " and a height " . $this->height . " is " . $this->calculateArea();
     }
 
     public function displayAreaAndVolume()
     {
-        [$radius, $height, $res1, $res2] = [$this->radius, $this->height, $this->calculateArea(), $this->calculateVolume()];
-        echo "The area of a cone with radius " . $this->radius . " and a height " . $this->height . " is " . $res1 . " and the volume is " . $res2;
+        echo "The area of a cone with radius " . $this->radius . " and a height " . $this->height . " is " . $this->calculateArea() . " and the volume is " . $this->calculateVolume();
     }
 }

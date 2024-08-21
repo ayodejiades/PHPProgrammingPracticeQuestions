@@ -1,17 +1,7 @@
 <?php
-require_once "./Shapes/Cone.php";
-require_once "./Shapes/Cube.php";
-require_once "./Shapes/Cylinder.php";
-require_once "./Shapes/Sphere.php";
+require_once "./Handlers/ShapeHandler.php";
+$shape1 = new ShapeHandler();
+$shape1->Cone()->accepts(3, 4)->displayAreaAndVolume()."\n";
 
-$someCone = new Cone();
-echo $someCone->accepts(2, 3)->displayAreaAndVolume() . "<br>";
-
-$someCube = new Cube();
-echo $someCube->accepts(2)->displayAreaAndVolume() . "<br>";
-
-$someCylinder = new Cylinder();
-echo $someCylinder->accepts(2, 3)->displayAreaAndVolume() . "<br>";
-
-$someSphere = new Sphere();
-echo $someSphere->accepts(2)->displayAreaAndVolume() . "<br>";
+$shape2 = new ShapeHandler();
+$shape2->Sphere()->accepts(6)->displayAreaAndVolume()."\n";

@@ -4,20 +4,22 @@ class Cube extends Square
 {
     public function calculateArea()
     {
-        $length = $this->length;
-        $area = 6 * $length * $length;
+        $area = 6 * pow($this->length, 2);
         return intval($area);
     }
 
     public function calculateVolume()
     {
-        $length = $this->length;
-        $volume = $length * $length * $length;
+        $volume = pow($this->length, 3);
         return intval($volume);
+    }
+
+    public function displayArea()
+    {
+        echo "The area of a cube with side length " . $this->length . " is " . $this->calculateArea();
     }
     public function displayAreaAndVolume()
     {
-        [$length, $res1, $res2] = [$this->length, $this->calculateArea(), $this->calculateVolume()];
-        echo "The area of a cube with side length " . $length . " is " . $res1 . " and the volume is " . $res2;
+        echo "The area of a cube with side length " . $this->length . " is " . $this->calculateArea() . " and the volume is " . $this->calculateVolume();
     }
 }

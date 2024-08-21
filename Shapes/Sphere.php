@@ -6,20 +6,21 @@ class Sphere extends Circle
 
     public function calculateArea()
     {
-        [$radius, $pi] = [$this->radius, pi()];
-        $area = 4 * $pi * ($radius ** 2);
+        $area = 4 * pi() * ($this->radius ** 2);
         return intval($area);
     }
 
     public function calculateVolume()
     {
-        [$radius, $pi] = [$this->radius, pi()];
-        $volume = 4 / 3 * $pi * ($radius ** 3);
+        $volume = 4 / 3 * pi() * ($this->radius ** 3);
         return intval($volume);
+    }
+    public function displayArea()
+    {
+        echo "The area of a sphere with radius " . $this->radius . " is " . $this->calculateArea();
     }
     public function displayAreaAndVolume()
     {
-        [$radius, $res1, $res2] = [$this->radius, $this->calculateArea(), $this->calculateVolume()];
-        echo "The area of a sphere with radius " . $radius . " is " . $res1 . " and the volume is " . $res2;
+        echo "The area of a sphere with radius " . $this->radius . " is " . $this->calculateArea() . " and the volume is " . $this->calculateVolume();
     }
 }

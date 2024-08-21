@@ -80,95 +80,79 @@ The following are numerous examples of how to use the programs listed above:
 
 ```php
 <?php
-$someCircle = new Circle();
-echo $someCircle->accepts(6)->displayArea() . "<br>";
+$shape1 = new ShapeHandler();
+$shape1->Square()->accepts(6)->displayAreaAndVolume()."\n";
 
-$someTriangle = new Triangle();
-echo $someTriangle->accepts(1, 2, 3)->displayArea() . "<br>";
-
-$someSquare = new Square();
-echo $someSquare->accepts(6)->displayArea() . "<br>";
-
-$someRectangle = new Rectangle();
-echo $someRectangle->accepts(2, 3)->displayArea() . "<br>";
-
+$shape2 = new ShapeHandler();
+$shape2->Triangle()->accepts(1,2,3)->displayArea();
 ```
 
 ## Program 2
 
 ```php
 <?php
-$someCone = new Cone();
-echo $someCone->accepts(2, 3)->displayAreaAndVolume() . "<br>";
+$shape1 = new ShapeHandler();
+$shape1->Cone()->accepts(3, 4)->displayAreaAndVolume() . "\n";
 
-$someCube = new Cube();
-echo $someCube->accepts(2)->displayAreaAndVolume() . "<br>";
-
-$someCylinder = new Cylinder();
-echo $someCylinder->accepts(2, 3)->displayAreaAndVolume() . "<br>";
-
-$someSphere = new Sphere();
-echo $someSphere->accepts(2)->displayAreaAndVolume() . "<br>";
+$shape2 = new ShapeHandler();
+$shape2->Sphere()->accepts(6)->displayAreaAndVolume() . "\n";
 ```
 
 ## Program 3
 
 ```php
 <?php 
-$strings = new Strings(["mamacita", ")(()", "racecar", "madam", "ayodeji"]);
- 
-foreach($strings->checkPalindrome() as $result){
-    echo $result. "\n";
-}
-
-
+$sentence1 = new Sentence();
+echo $sentence1->accepts("mamacita")->checkPalindrome();
 ```
 
 ## Program 4
 
 ```php
 <?php
-$numbers = new Number([1, 2, 3, 4, 5]);
-
-
-foreach ($numbers->checkEvenOrOdd() as $result) {
-    echo $result . "\n";
-}
+$numbers = new Number();
+$number1 = new Number();
+$results = $numbers->accepts([1, 2, 3, 4, 5])->checkEvenOrOdd();
+$result1 = $number1->accepts(1)->checkEvenOrOdd();
+print_r($results);
+print_r($result1);
 ```
 
 ## Program 5
 
 ```php
 <?php
-$numbers = new Number([1, 2, 3, 4, 5]);
 
-
-foreach ($numbers->checkPrime() as $result) {
-    echo $result . "\n";
-}
+$numbers = new Number();
+$number1 = new Number();
+$results = $numbers->accepts([1, 2, 3, 4, 5])->checkPrime();
+$result1 = $number1->accepts(1)->checkPrime();
+print_r($results);
+print_r($result1);
 ```
 
 ## Program 6
 
 ```php
 <?php
-$years = new Year([2000, 2001, 2002, 2003, 2004]);
-
-foreach ($years->checkLeapYears() as $result) {
-    echo $result . "\n";
-}
-
+$years = new Year();
+$year1 = new Year();
+$results = $years->accepts([2021, 2022, 2023, 2024, 2025])->checkLeapYear();
+$result1 = $year1->accepts(2021)->checkLeapYear();
+print_r($results);
+print_r($result1);
 ```
 
 ## Program 7
 
 ```php
 <?php
-$numbers = new Number([1, 2, 3, 4, 5]);
-
-foreach ($numbers->checkEvenOrOdd() as $result) {
-    echo $result . "\n";
-}
+$numbers = new Number();
+$number1 = new Number();
+$results = $numbers->accepts([1, 2, 3, 4, 5])->displayName();
+$result1 = $number1->accepts(1)->displayName();
+print_r($results);
+print_r($result1);
 ```
 
  Thank you, and I hope you enjoy the code!

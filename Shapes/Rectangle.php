@@ -14,17 +14,21 @@ class Rectangle implements Shape
 
     public function calculateArea()
     {
-        [$length, $breadth] = [$this->length, $this->breadth];
-        $area = $length * $breadth;
+        $area = $this->length * $this->breadth;
         return $area;
     }
 
-    public function calculateVolume(){}
+    public function calculateVolume()
+    {
+        return "invalid";
+    }
 
     public function displayArea()
     {
-        [$length, $breadth, $res] = [$this->length, $this->breadth, $this->calculateArea()];
-        echo "The area of a rectangle with sides " . $length . ", and " . $breadth . " is " . $res;
+        echo "The area of a rectangle with sides " . $this->length . ", and " . $this->breadth . " is " . $this->calculateArea();
     }
-    public function displayAreaAndVolume(){}
+    public function displayAreaAndVolume()
+    {
+        echo "The area of a rectangle with sides " . $this->length . ", and " . $this->breadth . " is " . $this->calculateArea() . "and the volume is " . $this->calculateVolume();
+    }
 }

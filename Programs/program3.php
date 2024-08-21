@@ -1,30 +1,36 @@
 <?php
-class Strings
+class Sentence
 {
-    public array $strings;
+    public array | string $sentences;
 
-    public function __construct(array $strings)
+    public function accepts(string|array $sentences): self
     {
-        $this->strings = $strings;
+        $this->sentences = $sentences;
+        return $this;
     }
 
-    public function isPalindrome(string $string): bool
+    public function isPalindrome(string $sentence): bool
     {
-        $reversedString = strrev($string);
-        return ($string === $reversedString);
+        $reversedSentence = strrev($sentence);
+        return $sentence === $reversedSentence;
     }
-    public function checkPalindrome(): array
+
+    public function checkPalindrome(): array|string
     {
-        $results = [];
-        foreach ($this->strings as $string) {
-            $results[] = $string . ($this->isPalindrome($string) ? " is a palindrome" : " is not a leap year");
+        if (is_array($this->sentences)) {
+            $results = [];
+            foreach ($this->sentences as $sentence) {
+                $results[] = $sentence . ($this->isPalindrome($sentence) ? " is a palindrome" : " is not a palindrome");
+            }
+            return $results;
         }
-        return $results;
+        return $this->sentences . ($this->isPalindrome($this->sentences) ? " is a palindrome" : " is not a palindrome");
     }
 }
 
-$strings = new Strings(["mamacita", ")(()"]);
- 
-foreach($strings->checkPalindrome() as $result){
-    echo $result. "\n";
-}
+$sentence1 = new Sentence();
+echo $sentence1->accepts("mamacita")->checkPalindrome();
+
+
+$sentence2 = new Sentence();
+print_r($sentence2->accepts(["mamacita", "madam", ")(()"])->checkPalindrome());

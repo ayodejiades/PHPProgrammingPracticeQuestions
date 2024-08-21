@@ -16,12 +16,17 @@ class Square implements Shape
         $area = $length * $length;
         return intval($area);
     }
-    public function calculateVolume(){}
-    
+    public function calculateVolume()
+    {
+        return "invalid";
+    }
+
     public function displayArea()
     {
-        [$length, $res] = [$this->length, $this->calculateArea()];
-        echo "The area of a square with side " . $length . " is " . $res;
+        echo "The area of a square with side " . $this->length . " is " . $this->calculateArea();
     }
-    public function displayAreaAndVolume(){}
+    public function displayAreaAndVolume()
+    {
+        echo "The area of a square with side " . $this->length . " is " . $this->calculateArea() . " and the volume is " . $this->calculateVolume();
+    }
 }
